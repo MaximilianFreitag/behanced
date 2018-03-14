@@ -1,0 +1,21 @@
+{
+  "name": "behanced",
+  "version": "1.0.0",
+  "description": "Behance, enhanced.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samsjchi/behanced.git"
+  },
+  "author": "Sam Chi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/samsjchi/behanced/issues"
+  },
+  "homepage": "https://github.com/samsjchi/behanced#readme",
+  "dependencies": {
+  }
+}
