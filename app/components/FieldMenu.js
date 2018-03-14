@@ -1,19 +1,19 @@
 var React = require('react')
 var PropTypes = require('prop-types')
+var FieldMenuItem = require('./FieldMenuItem')
 
 function FieldMenu (props) {
-  var fields = ['All', 'Architecture', 'Art Direction', 'Graphic Design', 'Illustration', 'Photography', 'UI/UX', 'Web Design']
+  var fields = ['Architecture', 'Art Direction', 'Branding', 'Fashion', 'Graphic Design', 'Illustration', 'Photography', 'UI/UX', 'Web Design']
 
   return (
     <ul className='field-menu'>
       {fields.map(function (field) {
         return (
-          <li
-            style={field === props.selectedField ? { color: '#ff3530' } : null}
-            onClick={props.onSelect.bind(null, field)}
-            key={field}>
-            {field}
-          </li>
+          <FieldMenuItem
+            field={field}
+            selectedField={props.selectedField}
+            onSelect={props.onSelect}
+          />
         )
       })}
     </ul>

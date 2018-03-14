@@ -25,3 +25,14 @@ li {
   font-weight: bold;
   cursor: pointer;
 }
+
+.project-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.project-card {
+  margin: 20px;
+  width: 200px;
+}

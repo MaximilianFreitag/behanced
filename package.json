@@ -24,6 +24,8 @@
   },
   "homepage": "https://github.com/samsjchi/behanced#readme",
   "dependencies": {
+    "axios": "^0.18.0",
+    "dotenv": "^5.0.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0"
   },
