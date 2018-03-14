@@ -8,7 +8,7 @@ function ProjectGridItem ({ project }) {
     <li className='project-card' key={project.id}>
       <img
         className='project-card__image'
-        src={project.covers['202']}
+        src={project.covers['230']}
         alt={'Project cover for ' + project.name} />
 
       <div className='project-card__details'>
