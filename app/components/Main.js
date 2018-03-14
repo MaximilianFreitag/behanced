@@ -1,4 +1,5 @@
 var React = require('react')
+var FieldMenu = require('./FieldMenu')
 
 class Main extends React.Component {
   constructor (props) {
@@ -20,21 +21,12 @@ class Main extends React.Component {
   }
 
   render () {
-    var fields = ['All', 'Architecture', 'Art Direction', 'Graphic Design', 'Illlustration', 'Photography', 'UI/UX', 'Web Design']
-
     return (
-      <ul className='fields'>
-        {fields.map(function (field) {
-          return (
-            <li
-              style={field === this.state.selectedField ? { color: '#ff3530' } : null}
-              onClick={this.updateField.bind(null, field)}
-              key={field}>
-              {field}
-            </li>
-          )
-        }, this)}
-      </ul>
+      <div>
+        <FieldMenu
+          selectedField={this.state.selectedField}
+          onSelect={this.updateField} />
+      </div>
     )
   }
 }

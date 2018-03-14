@@ -15,12 +15,12 @@ li {
   list-style-type: none;
 }
 
-.fields {
+.field-menu {
   display: flex;
   justify-content: center;
 }
 
-.fields li {
+.field-menu li {
   margin: 10px;
   font-weight: bold;
   cursor: pointer;
