@@ -12,16 +12,16 @@ function ProjectGridItem ({ project }) {
         alt={'Project cover for ' + project.name} />
 
       <div className='project-card__details'>
-        <h3><a href={project.url}>{project.name}</a></h3>
-        <p>By: <a href={project.owners[0].url}>{project.owners[0].first_name} {project.owners[0].last_name}</a></p>
+        <h3 className='project-card__title'><a href={project.url}>{project.name}</a></h3>
+        <p className='project-card__owner'>By: <a href={project.owners[0].url}>{project.owners[0].first_name} {project.owners[0].last_name}</a></p>
         <p>Field(s): {fieldList}</p>
-      </div>
 
-      <ul className='project-card__stats'>
-        <li>{project.stats.appreciations} appreciations</li>
-        <li>{project.stats.views} views</li>
-        <li>{project.stats.comments} comments</li>
-      </ul>
+        <ul className='project-card__stats'>
+          <li>{project.stats.appreciations} appreciations</li>
+          <li>{project.stats.views} views</li>
+          <li>{project.stats.comments} comments</li>
+        </ul>
+      </div>
     </li>
   )
 }
