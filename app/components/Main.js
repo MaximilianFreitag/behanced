@@ -1,6 +1,7 @@
 var React = require('react')
-var FieldMenu = require('./FieldMenu')
 var api = require('../utils/api')
+var FieldMenu = require('./FieldMenu')
+var ProjectGrid = require('./ProjectGrid')
 
 class Main extends React.Component {
   constructor (props) {
@@ -28,6 +29,8 @@ class Main extends React.Component {
 
     api.fetchProjects(field)
       .then(function (projects) {
+        console.log('projects:', projects)
+
         this.setState(function () {
           return {
             projects: projects
@@ -42,6 +45,10 @@ class Main extends React.Component {
         <FieldMenu
           selectedField={this.state.selectedField}
           onSelect={this.updateField} />
+
+        {!this.state.projects
+          ? <p>Loading...</p>
+          : <ProjectGrid projects={this.state.projects} />}
       </div>
     )
   }
