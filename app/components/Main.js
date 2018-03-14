@@ -1,23 +1,39 @@
 var React = require('react')
 var FieldMenu = require('./FieldMenu')
+var api = require('../utils/api')
 
 class Main extends React.Component {
   constructor (props) {
     super(props)
 
     this.state = {
-      selectedField: 'All'
+      selectedField: '',
+      projects: null
     }
 
     this.updateField = this.updateField.bind(this)
   }
 
+  componentDidMount () {
+    this.updateField(this.state.selectedField)
+  }
+
   updateField (field) {
     this.setState(function () {
       return {
-        selectedField: field
+        selectedField: field,
+        projects: null
       }
     })
+
+    api.fetchProjects(field)
+      .then(function (projects) {
+        this.setState(function () {
+          return {
+            projects: projects
+          }
+        })
+      }.bind(this))
   }
 
   render () {

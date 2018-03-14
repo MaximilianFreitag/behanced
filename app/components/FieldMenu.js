@@ -2,7 +2,7 @@ var React = require('react')
 var PropTypes = require('prop-types')
 
 function FieldMenu (props) {
-  var fields = ['All', 'Architecture', 'Art Direction', 'Graphic Design', 'Illustration', 'Photography', 'UI/UX', 'Web Design']
+  var fields = ['Architecture', 'Art Direction', 'Graphic Design', 'Illustration', 'Photography', 'UI/UX', 'Web Design']
 
   return (
     <ul className='field-menu'>
