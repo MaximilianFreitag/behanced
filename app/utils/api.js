@@ -9,7 +9,7 @@ module.exports = {
         return response.data.projects
       })
   },
-  fetchFields: function () {
+  fetchAllFields: function () {
     var encodedURI = window.encodeURI('https://api.behance.net/v2/fields?client_id=' + API_KEY)
 
     return axios.get(encodedURI)

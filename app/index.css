@@ -135,6 +135,7 @@ li {
   border-bottom: 1px solid hsla(0,0%,100%,.5);
   padding: 0 1rem 0.3rem 0;
   z-index: 20;
+  transition: opacity 0.3s ease;
 }
 
 .project-card__field2 {
@@ -143,6 +144,10 @@ li {
 
 .project-card__field3 {
   top: 65px;
+}
+
+.project-card__field:hover {
+  opacity: 0.6;
 }
 
 .project-card__details {

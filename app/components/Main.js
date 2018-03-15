@@ -10,7 +10,8 @@ class Main extends React.Component {
 
     this.state = {
       selectedField: '',
-      projects: null
+      projects: null,
+      allFields: null
     }
 
     this.updateField = this.updateField.bind(this)
@@ -18,6 +19,7 @@ class Main extends React.Component {
 
   componentDidMount () {
     this.updateField(this.state.selectedField)
+    this.fetchAllFields()
   }
 
   updateField (field) {
@@ -40,6 +42,19 @@ class Main extends React.Component {
       }.bind(this))
   }
 
+  fetchAllFields () {
+    api.fetchAllFields()
+      .then(function (fields) {
+        console.log('fields:', fields)
+
+        this.setState(function () {
+          return {
+            allFields: fields
+          }
+        })
+      }.bind(this))
+  }
+
   render () {
     return (
       <div>
@@ -49,9 +64,14 @@ class Main extends React.Component {
           selectedField={this.state.selectedField}
           onSelect={this.updateField} />
 
-        {!this.state.projects
+        {
+          !this.state.projects
           ? <p>Loading...</p>
-          : <ProjectGrid projects={this.state.projects} />}
+          : <ProjectGrid
+              projects={this.state.projects}
+              allFields={this.state.allFields}
+            />
+        }
       </div>
     )
   }

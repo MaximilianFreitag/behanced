@@ -1,8 +1,20 @@
 var React = require('react')
 var PropTypes = require('prop-types')
 
-function ProjectGridItem ({ project }) {
-  var fields = project.fields
+function ProjectGridItem ({ project, allFields }) {
+  var projectFields = project.fields
+
+  // Grab ID to create individual URL for each field tag
+  var projectFieldsWithIds = projectFields.map(function (projectField) {
+    var fieldObj = {}
+    allFields.forEach(function (field) {
+      if (projectField === field.name) {
+        fieldObj['id'] = field.id
+        fieldObj['name'] = projectField
+      }
+    })
+    return fieldObj
+  })
 
   return (
     <li className='project-card' key={project.id}>
@@ -15,9 +27,9 @@ function ProjectGridItem ({ project }) {
           <div className='project-card__image-overlay'></div>
         </a>
 
-        {fields.map(function (field, index) {
+        {projectFieldsWithIds.map(function (field, index) {
           return (
-            <a className={'project-card__field' + (index + 1) + ' project-card__field'} href={project.url}>{field}</a>
+            <a className={'project-card__field' + (index + 1) + ' project-card__field'} href={'https://www.behance.net/search?field=' + field.id}>{field.name}</a>
           )
         })}
       </div>
