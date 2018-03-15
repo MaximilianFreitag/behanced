@@ -1,5 +1,6 @@
 var React = require('react')
 var api = require('../utils/api')
+var Logo = require('./Logo')
 var FieldMenu = require('./FieldMenu')
 var ProjectGrid = require('./ProjectGrid')
 
@@ -42,6 +43,8 @@ class Main extends React.Component {
   render () {
     return (
       <div>
+        <Logo />
+
         <FieldMenu
           selectedField={this.state.selectedField}
           onSelect={this.updateField} />
