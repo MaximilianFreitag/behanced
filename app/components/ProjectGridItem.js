@@ -45,7 +45,13 @@ function ProjectGridItem ({ project, allFields }) {
       <div className='project-card__details'>
         <h3 className='project-card__title'><a href={project.url}>{project.name}</a></h3>
 
-        <p className='project-card__owner'>By: <a href={project.owners[0].url}>{project.owners[0].first_name} {project.owners[0].last_name}</a></p>
+        <div className='project-card__owner'>
+          <img
+            className='project-card__owner-avatar'
+            src={project.owners[0].images['50']}
+            alt={'Avatar for ' + project.name} />
+          <a href={project.owners[0].url}>{project.owners[0].display_name}</a>
+        </div>
 
         <ul className='project-card__stats'>
           <li>{project.stats.appreciations} appreciations</li>
