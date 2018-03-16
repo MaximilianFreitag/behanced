@@ -1,8 +1,10 @@
 var React = require('react')
 var PropTypes = require('prop-types')
+var api = require('../utils/api')
 
 function ProjectGridItem ({ project, allFields }) {
   var projectFields = project.fields
+  var timestamp = project.published_on
 
   // Grab ID to create individual URL for each field tag
   var projectFieldsWithIds = projectFields.map(function (projectField) {
@@ -15,6 +17,12 @@ function ProjectGridItem ({ project, allFields }) {
     })
     return fieldObj
   })
+
+  // Published date
+  var pubDate = new Date(timestamp * 1000)
+  var months = [ 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec' ]
+  var formattedPubDate = months[pubDate.getMonth()] + ' '
+  + pubDate.getDate() + ', ' + pubDate.getFullYear()
 
   return (
     <li className='project-card' key={project.id}>
@@ -36,6 +44,7 @@ function ProjectGridItem ({ project, allFields }) {
 
       <div className='project-card__details'>
         <h3 className='project-card__title'><a href={project.url}>{project.name}</a></h3>
+
         <p className='project-card__owner'>By: <a href={project.owners[0].url}>{project.owners[0].first_name} {project.owners[0].last_name}</a></p>
 
         <ul className='project-card__stats'>
@@ -43,6 +52,10 @@ function ProjectGridItem ({ project, allFields }) {
           <li>{project.stats.views} views</li>
           <li>{project.stats.comments} comments</li>
         </ul>
+      </div>
+
+      <div className='project-card__published-date'>
+        <p>Published: {formattedPubDate}</p>
       </div>
 
       <div className='project-card__highlight'></div>
