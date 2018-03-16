@@ -2,6 +2,12 @@ var React = require('react')
 var PropTypes = require('prop-types')
 var api = require('../utils/api')
 
+// Font Awesome icons
+import FontAwesomeIcon from '@fortawesome/react-fontawesome'
+import faThumbsUp from '@fortawesome/fontawesome-free-solid/faThumbsUp'
+import faEye from '@fortawesome/fontawesome-free-solid/faEye'
+import faComment from '@fortawesome/fontawesome-free-solid/faComment'
+
 function ProjectGridItem ({ project, allFields }) {
   var projectFields = project.fields
   var timestamp = project.published_on
@@ -52,12 +58,21 @@ function ProjectGridItem ({ project, allFields }) {
             alt={'Avatar for ' + project.name} />
           <a href={project.owners[0].url}>{project.owners[0].display_name}</a>
         </div>
+      </div>
 
-        <ul className='project-card__stats'>
-          <li>{project.stats.appreciations} appreciations</li>
-          <li>{project.stats.views} views</li>
-          <li>{project.stats.comments} comments</li>
-        </ul>
+      <div className='project-card__stats'>
+        <div className='project-card__stats-item'>
+          <FontAwesomeIcon icon={faThumbsUp} />
+          {project.stats.appreciations}
+        </div>
+        <div className='project-card__stats-item'>
+          <FontAwesomeIcon icon={faEye} />
+          {project.stats.views}
+        </div>
+        <div className='project-card__stats-item'>
+          <FontAwesomeIcon icon={faComment} />
+          {project.stats.comments}
+        </div>
       </div>
 
       <div className='project-card__published-date'>
