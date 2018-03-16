@@ -17,10 +17,10 @@ module.exports = {
         test: /\.svg$/,
         use: [
           {
-            loader: "babel-loader"
+            loader: 'babel-loader'
           },
           {
-            loader: "react-svg-loader",
+            loader: 'react-svg-loader',
             options: {
               jsx: true
             }
@@ -38,10 +38,8 @@ module.exports = {
     })
   ],
   devServer: {
-    headers: {
-      "Access-Control-Allow-Origin": "*",
-      "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH, OPTIONS",
-      "Access-Control-Allow-Headers": "X-Requested-With, content-type, Authorization"
-    }
+    host: 'localhost',
+    port: 8080,
+    headers: { 'Access-Control-Allow-Origin': '*' }
   }
 }

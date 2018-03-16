@@ -2,13 +2,14 @@ var React = require('react')
 var PropTypes = require('prop-types')
 var ProjectGridItem = require('./ProjectGridItem')
 
-function ProjectGrid ({ projects }) {
+function ProjectGrid ({ projects, allFields }) {
   return (
     <ul className='project-grid'>
       {projects.map(function (project) {
         return (
           <ProjectGridItem
             project={project}
+            allFields={allFields}
             key={project.id}
           />
         )
@@ -18,7 +19,8 @@ function ProjectGrid ({ projects }) {
 }
 
 ProjectGrid.propTypes = {
-  projects: PropTypes.array.isRequired
+  projects: PropTypes.array.isRequired,
+  allFields: PropTypes.array.isRequired
 }
 
 module.exports = ProjectGrid
