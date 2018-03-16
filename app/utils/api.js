@@ -17,4 +17,12 @@ module.exports = {
         return response.data.fields
       })
   }
+  // fetchProjectDescription: function (projectId) {
+  //   var encodedURI = window.encodeURI('https://api.behance.net/v2/projects/' + projectId + '?client_id=' + API_KEY)
+  //
+  //   return axios.get(encodedURI)
+  //     .then(function (response) {
+  //       return response.data.project.description
+  //     })
+  // }
 }
