@@ -1,3 +1,11 @@
+@font-face {
+  font-family: 'Tiempos';
+  font-weight: 600;
+  src: url('./assets/fonts/TiemposTextWeb-Semibold.woff') format('woff'),
+    url('./assets/fonts/TiemposTextWeb-Semibold.eot') format('embedded-opentype'),
+    url('./assets/fonts/TiemposTextWeb-Semibold.ttf') format('truetype');
+}
+
 body {
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif;
   font-size: 12px;
@@ -166,7 +174,9 @@ li {
 }
 
 .project-card__title {
+  font-family: 'Tiempos';
   font-size: 18px;
+  font-weight: 600;
   margin: 0;
 }
 
