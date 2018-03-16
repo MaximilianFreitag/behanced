@@ -18,6 +18,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+html {
+  background: #fff;
+}
+
 ul {
   padding: 0;
 }
@@ -37,7 +41,7 @@ li {
 }
 
 .logo .cls-2 {
-  fill: #ff3530;
+  fill: #c1ac6a;
 }
 
 .field-menu {
@@ -58,7 +62,7 @@ li {
 }
 
 .field-menu li:hover {
-  color: #ff3530;
+  color: #c1ac6a;
 }
 
 .project-grid {
@@ -170,7 +174,7 @@ li {
 }
 
 .project-card__details a:hover {
-  color: #ff3530;
+  color: #c1ac6a;
 }
 
 .project-card__title {
@@ -217,7 +221,7 @@ li {
 }
 
 .project-card__stats-item:hover {
-  color: #ff3530;
+  color: #c1ac6a;
 }
 
 .svg-inline--fa {
@@ -260,7 +264,7 @@ li {
   bottom: 0;
   left: 0;
   right: 0;
-  background: #ff3530;
+  background: #c1ac6a;
   border-bottom-left-radius: 50px;
   border-bottom-right-radius: 50px;
 }
