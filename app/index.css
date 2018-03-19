@@ -1,3 +1,11 @@
+@font-face {
+  font-family: 'Tiempos';
+  font-weight: 600;
+  src: url('./assets/fonts/TiemposTextWeb-Semibold.woff') format('woff'),
+    url('./assets/fonts/TiemposTextWeb-Semibold.eot') format('embedded-opentype'),
+    url('./assets/fonts/TiemposTextWeb-Semibold.ttf') format('truetype');
+}
+
 body {
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif;
   font-size: 12px;
@@ -29,7 +37,7 @@ li {
 }
 
 .logo .cls-2 {
-  fill: #ff3530;
+  fill: #c1ac6a;
 }
 
 .field-menu {
@@ -50,7 +58,7 @@ li {
 }
 
 .field-menu li:hover {
-  color: #ff3530;
+  color: #c1ac6a;
 }
 
 .project-grid {
@@ -151,7 +159,7 @@ li {
 }
 
 .project-card__details {
-  margin-bottom: 3.5em;
+  margin-bottom: 5.5em;
   padding: 1.5em;
 }
 
@@ -162,11 +170,13 @@ li {
 }
 
 .project-card__details a:hover {
-  color: #ff3530;
+  color: #c1ac6a;
 }
 
 .project-card__title {
+  font-family: 'Tiempos';
   font-size: 18px;
+  font-weight: 600;
   margin: 0;
 }
 
@@ -187,13 +197,50 @@ li {
   border-radius: 50%;
 }
 
+.project-card__stats {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: absolute;
+  height: 25px;
+  bottom: 40px;
+  left: 0;
+  right: 0;
+  margin: 0 1.5em;
+  padding: 10px 0 17px;
+}
+
+.project-card__stats-item {
+  text-align: center;
+  color: #9e9e9e;
+  transition: color 0.15s ease;
+}
+
+.project-card__stats-item:hover {
+  color: #c1ac6a;
+}
+
+.svg-inline--fa {
+  margin-right: 5px;
+}
+
+.svg-inline--fa.fa-eye {
+  position: relative;
+  top: 1px;
+}
+
+.svg-inline--fa.fa-comment {
+  position: relative;
+  top: 1px;
+}
+
 .project-card__published-date {
   position: absolute;
   height: 15px;
   bottom: 0;
   left: 0;
   right: 0;
-  margin: 0 12px;
+  margin: 0 1.5em;
   padding: 10px 0 12px;
   border-top: 1px solid rgba(25,25,25,0.1);
 }
@@ -213,7 +260,7 @@ li {
   bottom: 0;
   left: 0;
   right: 0;
-  background: #ff3530;
+  background: #c1ac6a;
   border-bottom-left-radius: 50px;
   border-bottom-right-radius: 50px;
 }

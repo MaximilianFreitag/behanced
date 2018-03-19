@@ -4,7 +4,7 @@ var PropTypes = require('prop-types')
 function FieldMenuItem (props) {
   return (
     <li
-      style={props.field === props.selectedField ? { color: '#ff3530' } : null}
+      style={props.field === props.selectedField ? { color: '#c1ac6a' } : null}
       onClick={props.onSelect.bind(null, props.field)}
       key={props.field}>
       {props.field}
