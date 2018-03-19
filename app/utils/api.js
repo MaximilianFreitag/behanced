@@ -1,28 +1,18 @@
-var axios = require('axios')
+const axios = require('axios')
+
+const clientId = `?client_id=${API_KEY}`
 
 module.exports = {
   fetchProjects: function (field) {
-    var encodedURI = window.encodeURI('https://api.behance.net/v2/projects?client_id=' + API_KEY + '&sort=appreciations&field=' + field)
+    const encodedURI = window.encodeURI(`https://api.behance.net/v2/projects${clientId}&sort=appreciations&field=${field}`)
 
     return axios.get(encodedURI)
-      .then(function (response) {
-        return response.data.projects
-      })
+      .then(({ data }) => data.projects)
   },
   fetchAllFields: function () {
-    var encodedURI = window.encodeURI('https://api.behance.net/v2/fields?client_id=' + API_KEY)
+    const encodedURI = window.encodeURI(`https://api.behance.net/v2/fields${clientId}`)
 
     return axios.get(encodedURI)
-      .then(function (response) {
-        return response.data.fields
-      })
+      .then(({ data }) => data.fields)
   }
-  // fetchProjectDescription: function (projectId) {
-  //   var encodedURI = window.encodeURI('https://api.behance.net/v2/projects/' + projectId + '?client_id=' + API_KEY)
-  //
-  //   return axios.get(encodedURI)
-  //     .then(function (response) {
-  //       return response.data.project.description
-  //     })
-  // }
 }
