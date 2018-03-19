@@ -8,6 +8,9 @@ import faThumbsUp from '@fortawesome/fontawesome-free-solid/faThumbsUp'
 import faEye from '@fortawesome/fontawesome-free-solid/faEye'
 import faComment from '@fortawesome/fontawesome-free-solid/faComment'
 
+// Numeral.js library to format stats
+import numeral from 'numeral';
+
 function ProjectGridItem ({ project, allFields }) {
   var projectFields = project.fields
   var timestamp = project.published_on
@@ -24,11 +27,20 @@ function ProjectGridItem ({ project, allFields }) {
     return fieldObj
   })
 
+  // Format stats to display in user-friendly format
+  var formatStatCount = function (count) {
+    return (count < 1000)
+      ? numeral(count).format('0,0')
+      : numeral(count).format('0.0a')
+  }
+  var appreciationCount = formatStatCount(project.stats.appreciations)
+  var viewCount = formatStatCount(project.stats.views)
+  var commentCount = formatStatCount(project.stats.comments)
+
   // Published date
   var pubDate = new Date(timestamp * 1000)
   var months = [ 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec' ]
-  var formattedPubDate = months[pubDate.getMonth()] + ' '
-  + pubDate.getDate() + ', ' + pubDate.getFullYear()
+  var formattedPubDate = months[pubDate.getMonth()] + ' ' + pubDate.getDate() + ', ' + pubDate.getFullYear()
 
   return (
     <li className='project-card' key={project.id}>
@@ -63,15 +75,15 @@ function ProjectGridItem ({ project, allFields }) {
       <div className='project-card__stats'>
         <div className='project-card__stats-item'>
           <FontAwesomeIcon icon={faThumbsUp} />
-          {project.stats.appreciations}
+          {appreciationCount}
         </div>
         <div className='project-card__stats-item'>
           <FontAwesomeIcon icon={faEye} />
-          {project.stats.views}
+          {viewCount}
         </div>
         <div className='project-card__stats-item'>
           <FontAwesomeIcon icon={faComment} />
-          {project.stats.comments}
+          {commentCount}
         </div>
       </div>
 
