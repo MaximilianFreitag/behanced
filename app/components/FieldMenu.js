@@ -1,8 +1,9 @@
-var React = require('react')
-var PropTypes = require('prop-types')
-var FieldMenuItem = require('./FieldMenuItem')
+import React from 'react'
+import PropTypes from 'prop-types'
 
-function FieldMenu ({ selectedField, onSelect }) {
+import FieldMenuItem from './FieldMenuItem'
+
+export default function FieldMenu ({ selectedField, onSelect }) {
   const fields = [
     'Architecture',
     'Art Direction',
@@ -32,5 +33,3 @@ FieldMenu.propTypes = {
   selectedField: PropTypes.string.isRequired,
   onSelect: PropTypes.func.isRequired
 }
-
-module.exports = FieldMenu

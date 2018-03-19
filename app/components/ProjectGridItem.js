@@ -1,6 +1,5 @@
-var React = require('react')
-var PropTypes = require('prop-types')
-var api = require('../utils/api')
+import React from 'react'
+import PropTypes from 'prop-types'
 
 // Font Awesome icons
 import FontAwesomeIcon from '@fortawesome/react-fontawesome'
@@ -11,7 +10,7 @@ import faComment from '@fortawesome/fontawesome-free-solid/faComment'
 // Numeral.js library to format stats
 import numeral from 'numeral'
 
-function ProjectGridItem ({ project, allFields }) {
+export default function ProjectGridItem ({ project, allFields }) {
   // Project variables
   const { id, name, owners, published_on, stats, url } = project
   const projectFields = project.fields
@@ -100,5 +99,3 @@ function ProjectGridItem ({ project, allFields }) {
 ProjectGridItem.propTypes = {
   project: PropTypes.object.isRequired
 }
-
-module.exports = ProjectGridItem

@@ -1,10 +1,11 @@
-var React = require('react')
-var api = require('../utils/api')
-var Logo = require('./Logo')
-var FieldMenu = require('./FieldMenu')
-var ProjectGrid = require('./ProjectGrid')
+import React, { Component } from 'react'
+import { fetchProjects, fetchAllFields } from '../utils/api'
 
-class Main extends React.Component {
+import Logo from './Logo'
+import FieldMenu from './FieldMenu'
+import ProjectGrid from './ProjectGrid'
+
+class Main extends Component {
   constructor (props) {
     super(props)
 
@@ -19,7 +20,9 @@ class Main extends React.Component {
 
   componentDidMount () {
     this.updateField(this.state.selectedField)
-    this.fetchAllFields()
+
+    fetchAllFields()
+      .then((fields) => this.setState(() => ({ allFields: fields })))
   }
 
   updateField (field) {
@@ -28,13 +31,8 @@ class Main extends React.Component {
       projects: null
     }))
 
-    api.fetchProjects(field)
+    fetchProjects(field)
       .then((projects) => this.setState(() => ({ projects })))
-  }
-
-  fetchAllFields () {
-    api.fetchAllFields()
-      .then((fields) => this.setState(() => ({ allFields: fields })))
   }
 
   render () {
@@ -60,4 +58,4 @@ class Main extends React.Component {
   }
 }
 
-module.exports = Main
+export default Main
