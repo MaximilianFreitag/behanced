@@ -12,15 +12,16 @@ import faComment from '@fortawesome/fontawesome-free-solid/faComment'
 import numeral from 'numeral'
 
 function ProjectGridItem ({ project, allFields }) {
+  // Project variables
+  const { id, name, owners, published_on, stats, url } = project
   const projectFields = project.fields
-  const timestamp = project.published_on
 
   // Grab project ID to create individual URL for each field tag
   const projectFieldsWithIds = projectFields.map((projectField) => {
     const fieldObj = {}
-    allFields.forEach((field) => {
-      if (projectField === field.name) {
-        fieldObj.id = field.id
+    allFields.forEach(({ id, name }) => {
+      if (projectField === name) {
+        fieldObj.id = id
         fieldObj.name = projectField
       }
     })
@@ -33,42 +34,42 @@ function ProjectGridItem ({ project, allFields }) {
       ? numeral(count).format('0,0')
       : numeral(count).format('0.0a')
   }
-  const appreciationCount = formatStatCount(project.stats.appreciations)
-  const viewCount = formatStatCount(project.stats.views)
-  const commentCount = formatStatCount(project.stats.comments)
+  const appreciationCount = formatStatCount(stats.appreciations)
+  const viewCount = formatStatCount(stats.views)
+  const commentCount = formatStatCount(stats.comments)
 
   // Get published date
-  const pubDate = new Date(timestamp * 1000)
+  const pubDate = new Date(published_on * 1000)
   const months = [ 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec' ]
   const formattedPubDate = months[pubDate.getMonth()] + ' ' + pubDate.getDate() + ', ' + pubDate.getFullYear()
 
   return (
-    <li className='project-card' key={project.id}>
+    <li className='project-card' key={id}>
       <div className='project-card__visual'>
-        <a className='project-card__image-link' href={project.url}>
+        <a className='project-card__image-link' href={url}>
           <img
             className='project-card__image'
             src={project.covers['230']}
-            alt={'Project cover for ' + project.name} />
+            alt={'Project cover for ' + name} />
           <div className='project-card__image-overlay'></div>
         </a>
 
-        {projectFieldsWithIds.map((field, index) => {
+        {projectFieldsWithIds.map(({ id, name }, index) => {
           return (
-            <a className={'project-card__field' + (index + 1) + ' project-card__field'} href={'https://www.behance.net/search?field=' + field.id}>{field.name}</a>
+            <a className={'project-card__field' + (index + 1) + ' project-card__field'} href={'https://www.behance.net/search?field=' + id}>{name}</a>
           )
         })}
       </div>
 
       <div className='project-card__details'>
-        <h3 className='project-card__title'><a href={project.url}>{project.name}</a></h3>
+        <h3 className='project-card__title'><a href={url}>{name}</a></h3>
 
         <div className='project-card__owner'>
           <img
             className='project-card__owner-avatar'
-            src={project.owners[0].images['50']}
-            alt={'Avatar for ' + project.name} />
-          <a href={project.owners[0].url}>{project.owners[0].display_name}</a>
+            src={owners[0].images['50']}
+            alt={'Avatar for ' + name} />
+          <a href={owners[0].url}>{owners[0].display_name}</a>
         </div>
       </div>
 
