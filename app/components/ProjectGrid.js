@@ -5,7 +5,7 @@ var ProjectGridItem = require('./ProjectGridItem')
 function ProjectGrid ({ projects, allFields }) {
   return (
     <ul className='project-grid'>
-      {projects.map(function (project) {
+      {projects.map((project) => {
         return (
           <ProjectGridItem
             project={project}
