@@ -23,53 +23,36 @@ class Main extends React.Component {
   }
 
   updateField (field) {
-    this.setState(function () {
-      return {
-        selectedField: field,
-        projects: null
-      }
-    })
+    this.setState(() => ({
+      selectedField: field,
+      projects: null
+    }))
 
     api.fetchProjects(field)
-      .then(function (projects) {
-        console.log('projects:', projects)
-
-        this.setState(function () {
-          return {
-            projects: projects
-          }
-        })
-      }.bind(this))
+      .then((projects) => this.setState(() => ({ projects })))
   }
 
   fetchAllFields () {
     api.fetchAllFields()
-      .then(function (fields) {
-        console.log('fields:', fields)
-
-        this.setState(function () {
-          return {
-            allFields: fields
-          }
-        })
-      }.bind(this))
+      .then((fields) => this.setState(() => ({ allFields: fields })))
   }
 
   render () {
+    const { selectedField, projects, allFields } = this.state
+
     return (
       <div>
         <Logo />
-
         <FieldMenu
-          selectedField={this.state.selectedField}
+          selectedField={selectedField}
           onSelect={this.updateField} />
 
         {
-          !this.state.projects
+          !projects
           ? <p>Loading...</p>
           : <ProjectGrid
-              projects={this.state.projects}
-              allFields={this.state.allFields}
+              projects={projects}
+              allFields={allFields}
             />
         }
       </div>
