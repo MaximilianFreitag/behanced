@@ -72,23 +72,23 @@ export default function ProjectGridItem ({ project, allFields }) {
         </div>
       </div>
 
+      <div className='project-card__published-date'>
+        <p>Published: {formattedPubDate}</p>
+      </div>
+
       <div className='project-card__stats'>
         <div className='project-card__stats-item'>
           <FontAwesomeIcon icon={faThumbsUp} />
-          {appreciationCount}
+          <a href={url}>{appreciationCount}</a>
         </div>
         <div className='project-card__stats-item'>
           <FontAwesomeIcon icon={faEye} />
-          {viewCount}
+          <a href={url}>{viewCount}</a>
         </div>
         <div className='project-card__stats-item'>
           <FontAwesomeIcon icon={faComment} />
-          {commentCount}
+          <a href={url}>{commentCount}</a>
         </div>
-      </div>
-
-      <div className='project-card__published-date'>
-        <p>Published: {formattedPubDate}</p>
       </div>
 
       <div className='project-card__highlight'></div>

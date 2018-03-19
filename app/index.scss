@@ -18,7 +18,8 @@ $project-card--background:                 $white;
 $project-card__field--color:               $white;
 $project-card__details--color:             $dark-gray;
 $project-card__details--color--hover:      $gold;
-$project-card__stats-item--color:          $gray;
+$project-card__stats-item--color:          $dark-gray;
+$project-card__stats-item-svg--color:      $gray;
 $project-card__stats-item--color--hover:   $gold;
 $project-card__published-date--color:      $gray;
 $project-card__highlight--background:      $gold;
@@ -118,10 +119,6 @@ li {
   border-radius: 5px;
   transition: transform 0.3s ease-in-out;
 
-  &:hover {
-    transform: scale(1.02, 1.02);
-  }
-
   &::after {
     content: '';
     position: absolute;
@@ -197,7 +194,7 @@ li {
 }
 
 .project-card__details {
-  margin-bottom: 5.5em;
+  margin-bottom: 4em;
   padding: 1.5em;
 
   a {
@@ -213,7 +210,7 @@ li {
 
 .project-card__title {
   font-family: 'Tiempos';
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
   margin: 0;
 }
@@ -235,31 +232,56 @@ li {
   border-radius: 50%;
 }
 
-.project-card__stats {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
+.project-card__published-date {
   position: absolute;
-  height: 25px;
+  height: 15px;
   bottom: 40px;
   left: 0;
   right: 0;
   margin: 0 1.5em;
-  padding: 10px 0 17px;
+  padding: 10px 0;
+
+  p {
+    color: $project-card__published-date--color;
+    font-size: 10px;
+    text-transform: uppercase;
+    margin: 0;
+  }
+}
+
+.project-card__stats {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 1.5em;
+  padding: 10px 0 14px;
+  border-top: 1px solid rgba(25, 25, 25, 0.1);
 }
 
 .project-card__stats-item {
   text-align: center;
   color: $project-card__stats-item--color;
+  font-weight: bold;
   transition: color 0.15s ease;
 
-  &:hover {
+  a {
+    text-decoration: none;
+    color: $project-card__stats-item--color;
+  }
+
+  a:hover {
     color: $project-card__stats-item--color--hover;
   }
 }
 
 .svg-inline--fa {
+  margin-left: 1px;
   margin-right: 5px;
+  color: $project-card__stats-item-svg--color;
 
   &.fa-eye {
     position: relative;
@@ -269,25 +291,6 @@ li {
   &.fa-comment {
     position: relative;
     top: 1px;
-  }
-}
-
-.project-card__published-date {
-  position: absolute;
-  height: 15px;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: 0 1.5em;
-  padding: 10px 0 12px;
-  border-top: 1px solid rgba(25,25,25,0.1);
-
-  p {
-    color: $project-card__published-date--color;
-    font-size: 10px;
-    text-transform: uppercase;
-    text-align: center;
-    margin: 0;
   }
 }
 
