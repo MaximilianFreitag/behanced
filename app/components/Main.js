@@ -40,12 +40,11 @@ class Main extends Component {
     const { selectedField, projects, allFields } = this.state
 
     return (
-      <div>
+      <div className='main'>
         <Logo />
         <FieldMenu
           selectedField={selectedField}
           onSelect={this.updateField} />
-
         {
           !projects
           ? <Loading />
