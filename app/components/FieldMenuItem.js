@@ -1,13 +1,13 @@
-var React = require('react')
-var PropTypes = require('prop-types')
+import React from 'react'
+import PropTypes from 'prop-types'
 
-function FieldMenuItem (props) {
+export default function FieldMenuItem ({ field, selectedField, onSelect }) {
   return (
     <li
-      style={props.field === props.selectedField ? { color: '#c1ac6a' } : null}
-      onClick={props.onSelect.bind(null, props.field)}
-      key={props.field}>
-      {props.field}
+      style={field === selectedField ? { color: '#c1ac6a' } : null}
+      onClick={() => onSelect(field)}
+      key={field}>
+      {field}
     </li>
   )
 }
@@ -17,5 +17,3 @@ FieldMenuItem.propTypes = {
   selectedField: PropTypes.string.isRequired,
   onSelect: PropTypes.func.isRequired
 }
-
-module.exports = FieldMenuItem

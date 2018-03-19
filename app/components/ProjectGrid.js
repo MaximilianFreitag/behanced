@@ -1,11 +1,12 @@
-var React = require('react')
-var PropTypes = require('prop-types')
-var ProjectGridItem = require('./ProjectGridItem')
+import React from 'react'
+import PropTypes from 'prop-types'
 
-function ProjectGrid ({ projects, allFields }) {
+import ProjectGridItem from './ProjectGridItem'
+
+export default function ProjectGrid ({ projects, allFields }) {
   return (
     <ul className='project-grid'>
-      {projects.map(function (project) {
+      {projects.map((project) => {
         return (
           <ProjectGridItem
             project={project}
@@ -22,5 +23,3 @@ ProjectGrid.propTypes = {
   projects: PropTypes.array.isRequired,
   allFields: PropTypes.array.isRequired
 }
-
-module.exports = ProjectGrid

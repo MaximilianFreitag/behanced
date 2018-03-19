@@ -1,10 +1,11 @@
-var React = require('react')
-var api = require('../utils/api')
-var Logo = require('./Logo')
-var FieldMenu = require('./FieldMenu')
-var ProjectGrid = require('./ProjectGrid')
+import React, { Component } from 'react'
+import { fetchProjects, fetchAllFields } from '../utils/api'
 
-class Main extends React.Component {
+import Logo from './Logo'
+import FieldMenu from './FieldMenu'
+import ProjectGrid from './ProjectGrid'
+
+class Main extends Component {
   constructor (props) {
     super(props)
 
@@ -19,57 +20,37 @@ class Main extends React.Component {
 
   componentDidMount () {
     this.updateField(this.state.selectedField)
-    this.fetchAllFields()
+
+    fetchAllFields()
+      .then((fields) => this.setState(() => ({ allFields: fields })))
   }
 
   updateField (field) {
-    this.setState(function () {
-      return {
-        selectedField: field,
-        projects: null
-      }
-    })
+    this.setState(() => ({
+      selectedField: field,
+      projects: null
+    }))
 
-    api.fetchProjects(field)
-      .then(function (projects) {
-        console.log('projects:', projects)
-
-        this.setState(function () {
-          return {
-            projects: projects
-          }
-        })
-      }.bind(this))
-  }
-
-  fetchAllFields () {
-    api.fetchAllFields()
-      .then(function (fields) {
-        console.log('fields:', fields)
-
-        this.setState(function () {
-          return {
-            allFields: fields
-          }
-        })
-      }.bind(this))
+    fetchProjects(field)
+      .then((projects) => this.setState(() => ({ projects })))
   }
 
   render () {
+    const { selectedField, projects, allFields } = this.state
+
     return (
       <div>
         <Logo />
-
         <FieldMenu
-          selectedField={this.state.selectedField}
+          selectedField={selectedField}
           onSelect={this.updateField} />
 
         {
-          !this.state.projects
+          !projects
           ? <p>Loading...</p>
           : <ProjectGrid
-              projects={this.state.projects}
-              allFields={this.state.allFields}
+              projects={projects}
+              allFields={allFields}
             />
         }
       </div>
@@ -77,4 +58,4 @@ class Main extends React.Component {
   }
 }
 
-module.exports = Main
+export default Main

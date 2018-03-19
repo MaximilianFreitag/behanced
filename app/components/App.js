@@ -1,7 +1,8 @@
-var React = require('react')
-var Main = require('./Main')
+import React, { Component } from 'react'
 
-class App extends React.Component {
+import Main from './Main'
+
+class App extends Component {
   render () {
     return (
       <div className='container'>
@@ -11,4 +12,4 @@ class App extends React.Component {
   }
 }
 
-module.exports = App
+export default App
