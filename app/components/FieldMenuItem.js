@@ -5,7 +5,7 @@ function FieldMenuItem ({ field, selectedField, onSelect }) {
   return (
     <li
       style={field === selectedField ? { color: '#c1ac6a' } : null}
-      onClick={onSelect.bind(null, field)}
+      onClick={() => onSelect(field)}
       key={field}>
       {field}
     </li>
