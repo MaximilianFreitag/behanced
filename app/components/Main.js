@@ -3,6 +3,7 @@ import { fetchProjects, fetchAllFields } from '../utils/api'
 
 import Logo from './Logo'
 import FieldMenu from './FieldMenu'
+import Loading from './Loading'
 import ProjectGrid from './ProjectGrid'
 
 class Main extends Component {
@@ -47,7 +48,7 @@ class Main extends Component {
 
         {
           !projects
-          ? <p>Loading...</p>
+          ? <Loading />
           : <ProjectGrid
               projects={projects}
               allFields={allFields}
