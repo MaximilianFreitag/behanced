@@ -9,38 +9,38 @@ import faEye from '@fortawesome/fontawesome-free-solid/faEye'
 import faComment from '@fortawesome/fontawesome-free-solid/faComment'
 
 // Numeral.js library to format stats
-import numeral from 'numeral';
+import numeral from 'numeral'
 
 function ProjectGridItem ({ project, allFields }) {
-  var projectFields = project.fields
-  var timestamp = project.published_on
+  const projectFields = project.fields
+  const timestamp = project.published_on
 
-  // Grab ID to create individual URL for each field tag
-  var projectFieldsWithIds = projectFields.map(function (projectField) {
-    var fieldObj = {}
-    allFields.forEach(function (field) {
+  // Grab project ID to create individual URL for each field tag
+  const projectFieldsWithIds = projectFields.map((projectField) => {
+    const fieldObj = {}
+    allFields.forEach((field) => {
       if (projectField === field.name) {
-        fieldObj['id'] = field.id
-        fieldObj['name'] = projectField
+        fieldObj.id = field.id
+        fieldObj.name = projectField
       }
     })
     return fieldObj
   })
 
-  // Format stats to display in user-friendly format
-  var formatStatCount = function (count) {
+  // Get stats in user-friendly format
+  const formatStatCount = (count) => {
     return (count < 1000)
       ? numeral(count).format('0,0')
       : numeral(count).format('0.0a')
   }
-  var appreciationCount = formatStatCount(project.stats.appreciations)
-  var viewCount = formatStatCount(project.stats.views)
-  var commentCount = formatStatCount(project.stats.comments)
+  const appreciationCount = formatStatCount(project.stats.appreciations)
+  const viewCount = formatStatCount(project.stats.views)
+  const commentCount = formatStatCount(project.stats.comments)
 
-  // Published date
-  var pubDate = new Date(timestamp * 1000)
-  var months = [ 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec' ]
-  var formattedPubDate = months[pubDate.getMonth()] + ' ' + pubDate.getDate() + ', ' + pubDate.getFullYear()
+  // Get published date
+  const pubDate = new Date(timestamp * 1000)
+  const months = [ 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec' ]
+  const formattedPubDate = months[pubDate.getMonth()] + ' ' + pubDate.getDate() + ', ' + pubDate.getFullYear()
 
   return (
     <li className='project-card' key={project.id}>
@@ -53,7 +53,7 @@ function ProjectGridItem ({ project, allFields }) {
           <div className='project-card__image-overlay'></div>
         </a>
 
-        {projectFieldsWithIds.map(function (field, index) {
+        {projectFieldsWithIds.map((field, index) => {
           return (
             <a className={'project-card__field' + (index + 1) + ' project-card__field'} href={'https://www.behance.net/search?field=' + field.id}>{field.name}</a>
           )
