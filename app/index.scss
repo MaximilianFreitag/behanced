@@ -17,14 +17,9 @@ $field-menu--color:                        $dark-gray;
 $field-menu--color--hover:                 $gold;
 
 $project-card--background:                 $white;
-$project-card__field--color:               $white;
-$project-card__details--color:             $dark-gray;
-$project-card__details--color--hover:      $gold;
-$project-card__stats-item--color:          $dark-gray;
-$project-card__stats-item-svg--color:      $gray;
-$project-card__stats-item--color--hover:   $gold;
-$project-card__published-date--color:      $gray;
-$project-card__highlight--background:      $gold;
+$project-card--color:                      $dark-gray;
+$project-card--color--hover:               $gold;
+$project-card__stats-pub--color:           $gray;
 
 $footer--background:                       $charcoal;
 $footer--color:                            $light-gray;
@@ -242,7 +237,7 @@ li {
   top: 15px;
   right: 0;
   text-align: right;
-  color: $project-card__field--color;
+  color: $white;
   border-bottom: 1px solid hsla(0,0%,100%,.5);
   padding: 0 1rem 0.3rem 0;
   z-index: $z-project-card__field;
@@ -266,11 +261,11 @@ li {
 
   a {
     text-decoration: none;
-    color: $project-card__details--color;
+    color: $project-card--color;
     transition: color 0.15s ease;
 
     &:hover {
-      color: $project-card__details--color--hover;
+      color: $project-card--color--hover;
     }
   }
 }
@@ -309,7 +304,7 @@ li {
   padding: 10px 0;
 
   p {
-    color: $project-card__published-date--color;
+    color: $project-card__stats-pub--color;
     font-size: 10px;
     text-transform: uppercase;
     margin: 0;
@@ -331,23 +326,23 @@ li {
 
 .project-card__stats-item {
   text-align: center;
-  color: $project-card__stats-item--color;
+  color: $project-card--color;
   font-weight: bold;
   transition: color 0.15s ease;
 
   a {
     text-decoration: none;
-    color: $project-card__stats-item--color;
+    color: $project-card--color;
   }
 
   a:hover {
-    color: $project-card__stats-item--color--hover;
+    color: $project-card--color--hover;
   }
 
   .svg-inline--fa {
     margin-left: 1px;
     margin-right: 5px;
-    color: $project-card__stats-item-svg--color;
+    color: $project-card__stats-pub--color;
 
     &.fa-eye {
       position: relative;
@@ -368,7 +363,7 @@ li {
   bottom: 0;
   left: 0;
   right: 0;
-  background: $project-card__highlight--background;
+  background: $project-card--color--hover;
   border-bottom-left-radius: 50px;
   border-bottom-right-radius: 50px;
 }
