@@ -30,6 +30,7 @@ export default function Footer () {
               <AdobeLogo width={40} />
             </a>
           </div>
+          <div className='footer__adobe-behance__divider'></div>
           <div className='footer__powered-by-behance'>
             <a href='https://www.behance.net/' target='_blank'>
               <PoweredByBehanceLogo width={100} />
