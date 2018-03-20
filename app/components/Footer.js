@@ -1,6 +1,6 @@
 import React from 'react'
 
-import LogoMini from '../assets/behanced-logo-mini.svg'
+import LogoMini from '../assets/logos/behanced-logo-mini.svg'
 
 export default function Footer () {
   return (
