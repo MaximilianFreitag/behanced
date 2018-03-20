@@ -64,10 +64,10 @@ export default function ProjectGridItem ({ project, allFields }) {
         <h3 className='project-card__title'><a href={url}>{name}</a></h3>
 
         <div className='project-card__owner'>
-          <img
+          <a href={owners[0].url}><img
             className='project-card__owner-avatar'
             src={owners[0].images['50']}
-            alt={'Avatar for ' + name} />
+            alt={'Avatar for ' + name} /></a>
           <a href={owners[0].url}>{owners[0].display_name}</a>
         </div>
       </div>
@@ -78,16 +78,22 @@ export default function ProjectGridItem ({ project, allFields }) {
 
       <div className='project-card__stats'>
         <div className='project-card__stats-item'>
-          <FontAwesomeIcon icon={faThumbsUp} />
-          <a href={url}>{appreciationCount}</a>
+          <a href={url}>
+            <FontAwesomeIcon icon={faThumbsUp} />
+            {appreciationCount}
+          </a>
         </div>
         <div className='project-card__stats-item'>
-          <FontAwesomeIcon icon={faEye} />
-          <a href={url}>{viewCount}</a>
+          <a href={url}>
+            <FontAwesomeIcon icon={faEye} />
+            {viewCount}
+          </a>
         </div>
         <div className='project-card__stats-item'>
-          <FontAwesomeIcon icon={faComment} />
-          <a href={url}>{commentCount}</a>
+          <a href={url}>
+            <FontAwesomeIcon icon={faComment} />
+            {commentCount}
+          </a>
         </div>
       </div>
 
