@@ -106,11 +106,23 @@ li {
     font-size: 12px;
     font-weight: bold;
     text-transform: uppercase;
-    transition: all 0.3s ease;
+    transition: color 0.3s ease;
 
     &:hover {
       color: $field-menu--color--hover;
+
+      .more-arrow {
+        fill: $field-menu--color--hover;
+      }
     }
+  }
+
+  .more-arrow {
+    position: relative;
+    top: 1px;
+    margin-left: 5px;
+    fill: $field-menu--color;
+    transition: fill 0.3s ease;
   }
 }
 
