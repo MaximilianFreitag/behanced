@@ -10,6 +10,10 @@ import WebpackLogo from '../assets/logos/webpack-logo.svg'
 import SassLogo from '../assets/logos/sass-logo.svg'
 import FirebaseLogo from '../assets/logos/firebase-logo.svg'
 
+// GitHub Logo
+import FontAwesomeIcon from '@fortawesome/react-fontawesome'
+import faGitHub from '@fortawesome/fontawesome-free-brands/faGithub'
+
 export default function Footer () {
   return (
     <footer className='footer'>
@@ -64,6 +68,11 @@ export default function Footer () {
           </ul>
         </div>
       </div>
+
+      <a className='footer__github-link' href='https://github.com/samsjchi/behanced' target='_blank'>
+        <FontAwesomeIcon icon={faGitHub} />
+        View on GitHub
+      </a>
     </footer>
   )
 }
