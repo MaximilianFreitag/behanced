@@ -1,9 +1,11 @@
 // Color Hex Codes
 $white: #ffffff;
-$gray: #9e9e9e;
 $light-gray: #f7f7f7;
+$gray: #9e9e9e;
 $dark-gray: #2b2b2b;
+$charcoal: #1a1a1a;
 $gold: #c1ac6a;
+$adobe-red: #ff0000;
 
 // Component Colors
 $logo--background:                         $white;
@@ -24,11 +26,15 @@ $project-card__stats-item--color--hover:   $gold;
 $project-card__published-date--color:      $gray;
 $project-card__highlight--background:      $gold;
 
+$footer--background:                       $charcoal;
+$footer--color:                            $light-gray;
+
 // z-indices
 $z-project-card__shadow: -1;
 $z-project-card__image-link: 5;
 $z-project-card__image-overlay: 10;
 $z-project-card__field: 15;
+$z-main: 20;
 
 // Custom Fonts
 @font-face {
@@ -61,17 +67,31 @@ li {
   list-style-type: none;
 }
 
-// Logo
+::selection {
+  background: $gold;
+  color: $white;
+}
+
+// Main
+.main {
+  position: relative;
+  background-color: $light-gray;
+  margin-bottom: 520px;
+  min-height: 200vh;
+  box-shadow: 0 0 20px rgba(0,0,0,.25);
+  z-index: $z-main;
+}
+
 .logo {
   text-align: center;
   padding-top: 5em;
   background-color: $logo--background;
 
-  .cls-1 {
+  .text {
     fill: $logo--fill--text;
   }
 
-  .cls-2 {
+  .plus {
     fill: $logo--fill--plus;
   }
 }
@@ -101,7 +121,7 @@ li {
 
 // Loading Spinner
 .spinner {
-  margin: 150px auto 0;
+  margin: 250px auto 0;
   width: 125px;
   text-align: center;
 
@@ -323,21 +343,21 @@ li {
   a:hover {
     color: $project-card__stats-item--color--hover;
   }
-}
 
-.svg-inline--fa {
-  margin-left: 1px;
-  margin-right: 5px;
-  color: $project-card__stats-item-svg--color;
+  .svg-inline--fa {
+    margin-left: 1px;
+    margin-right: 5px;
+    color: $project-card__stats-item-svg--color;
 
-  &.fa-eye {
-    position: relative;
-    top: 1px;
-  }
+    &.fa-eye {
+      position: relative;
+      top: 1px;
+    }
 
-  &.fa-comment {
-    position: relative;
-    top: 1px;
+    &.fa-comment {
+      position: relative;
+      top: 1px;
+    }
   }
 }
 
@@ -355,4 +375,151 @@ li {
 
 .project-card:hover .project-card__highlight {
   height: 3px;
+}
+
+// Footer
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 380px;
+  background: $footer--background;
+  color: $footer--color;
+  padding: 70px 0;
+  text-align: center;
+  z-index: 0;
+}
+
+.footer__behanced-logo {
+  margin-bottom: 50px;
+
+  .text {
+    fill: $footer--color;
+  }
+
+  .plus {
+    fill: $logo--fill--plus;
+  }
+}
+
+.footer__adobe-behance {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+
+  .adobe-logo {
+    fill: $adobe-red;
+  }
+
+  .text {
+    fill: $footer--color;
+  }
+}
+
+.footer__adobe-logo {
+  position: relative;
+  margin-right: 20px;
+  transition: opacity 0.3s ease;
+
+  &:hover {
+    opacity: 0.6;
+  }
+
+  svg {
+    position: relative;
+    top: 2px;
+  }
+}
+
+.footer__adobe-behance__divider {
+  height: 40px;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.25);
+  position: relative;
+  left: 0;
+}
+
+.footer__powered-by-behance {
+  display: flex;
+  align-items: center;
+  transition: opacity 0.3s ease;
+  margin-left: 20px;
+
+  &:hover {
+    opacity: 0.6;
+  }
+}
+
+.footer__web-tech p {
+  font-size: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.footer__web-tech-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 520px;
+  height: 100px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+
+  li {
+    transition: opacity 0.3s ease;
+  }
+
+  li:hover {
+    opacity: 0.6;
+  }
+
+  .firebase-logo-text {
+    fill: $footer--color;
+  }
+}
+
+.footer__github-link {
+  font-size: 11px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 1px;
+  border-radius: 300px;
+  padding: 15px 30px;
+  background-color: $footer--background;
+  color: $footer--color;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: $gold;
+    border: none;
+  }
+
+  .fa-github {
+    color: $white;
+    margin-right: 8px;
+    height: 1.75em;
+    width: auto;
+    vertical-align: -0.5em;
+  }
+}
+
+.footer__attribution {
+  font-size: 11px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-top: 50px;
+
+  a {
+    text-decoration: none;
+    color: $gold;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
 }

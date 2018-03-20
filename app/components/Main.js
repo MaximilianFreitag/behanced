@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { fetchProjects, fetchAllFields } from '../utils/api'
 
-import Logo from './Logo'
+import Logo from '../assets/logos/behanced-logo.svg'
 import FieldMenu from './FieldMenu'
 import Loading from './Loading'
 import ProjectGrid from './ProjectGrid'
@@ -40,12 +40,15 @@ class Main extends Component {
     const { selectedField, projects, allFields } = this.state
 
     return (
-      <div>
-        <Logo />
+      <div className='main'>
+        <div className='logo'>
+          <a href='/'>
+            <Logo width={250} />
+          </a>
+        </div>
         <FieldMenu
           selectedField={selectedField}
           onSelect={this.updateField} />
-
         {
           !projects
           ? <Loading />
