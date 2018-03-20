@@ -70,10 +70,12 @@ export default function Footer () {
         </div>
       </div>
 
-      <a className='footer__github-link' href='https://github.com/samsjchi/behanced' target='_blank'>
+      <a className='footer__github-link' href='https://github.com/samsjchi/behanced'>
         <FontAwesomeIcon icon={faGitHub} />
         View on GitHub
       </a>
+
+      <p className='footer__attribution'>Created by <a href='https://samchi.co/'>Sam Chi</a></p>
     </footer>
   )
 }
