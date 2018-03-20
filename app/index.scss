@@ -5,6 +5,7 @@ $gray: #9e9e9e;
 $dark-gray: #2b2b2b;
 $charcoal: #1a1a1a;
 $gold: #c1ac6a;
+$adobe-red: #ff0000;
 
 // Component Colors
 $logo--background:                         $white;
@@ -64,6 +65,11 @@ ul {
 
 li {
   list-style-type: none;
+}
+
+::selection {
+  background: $gold;
+  color: $white;
 }
 
 // Main
@@ -337,21 +343,21 @@ li {
   a:hover {
     color: $project-card__stats-item--color--hover;
   }
-}
 
-.svg-inline--fa {
-  margin-left: 1px;
-  margin-right: 5px;
-  color: $project-card__stats-item-svg--color;
+  .svg-inline--fa {
+    margin-left: 1px;
+    margin-right: 5px;
+    color: $project-card__stats-item-svg--color;
 
-  &.fa-eye {
-    position: relative;
-    top: 1px;
-  }
+    &.fa-eye {
+      position: relative;
+      top: 1px;
+    }
 
-  &.fa-comment {
-    position: relative;
-    top: 1px;
+    &.fa-comment {
+      position: relative;
+      top: 1px;
+    }
   }
 }
 
@@ -396,10 +402,80 @@ li {
   }
 }
 
+.footer__adobe-behance {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+
+  .adobe-logo {
+    fill: $adobe-red;
+  }
+
+  .text {
+    fill: $footer--color;
+  }
+}
+
+.footer__adobe-logo {
+  position: relative;
+  margin-right: 20px;
+  padding-right: 20px;
+  transition: opacity 0.3s ease;
+
+  svg {
+    position: relative;
+    top: 2px;
+  }
+
+  &:hover {
+    opacity: 0.6;
+  }
+
+  &::after {
+    content: '';
+    height: 100%;
+    width: 1px;
+    background: rgba(255, 255, 255, 0.2);
+    position: absolute;
+    right: 0;
+  }
+}
+
+.footer__powered-by-behance {
+  display: flex;
+  align-items: center;
+  transition: opacity 0.3s ease;
+
+  &:hover {
+    opacity: 0.6;
+  }
+}
+
+.footer__web-tech p {
+  font-size: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 0;
+}
+
 .footer__web-tech-list {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 50%;
-  margin: 50px auto;
+  width: 520px;
+  height: 100px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+
+  .firebase-logo-text {
+    fill: $footer--color;
+  }
+
+  li {
+    transition: opacity 0.3s ease;
+  }
+
+  li:hover {
+    opacity: 0.6;
+  }
 }
