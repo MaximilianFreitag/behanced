@@ -1,10 +1,14 @@
 import React from 'react'
 
+import LogoMini from '../assets/behanced-logo-mini.svg'
+
 export default function Footer () {
   return (
     <footer className='footer'>
       <div className='footer__behanced-logo'>
-        BEHANCED LOGO HERE
+        <a href='/'>
+          <LogoMini width={50} />
+        </a>
       </div>
 
       <div className='footer__tech-container'>

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { fetchProjects, fetchAllFields } from '../utils/api'
 
-import Logo from './Logo'
+import Logo from '../assets/behanced-logo.svg'
 import FieldMenu from './FieldMenu'
 import Loading from './Loading'
 import ProjectGrid from './ProjectGrid'
@@ -41,7 +41,11 @@ class Main extends Component {
 
     return (
       <div className='main'>
-        <Logo />
+        <div className='logo'>
+          <a href='/'>
+            <Logo width={250} />
+          </a>
+        </div>
         <FieldMenu
           selectedField={selectedField}
           onSelect={this.updateField} />
