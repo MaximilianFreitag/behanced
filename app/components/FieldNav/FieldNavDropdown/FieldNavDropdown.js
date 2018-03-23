@@ -15,7 +15,7 @@ function FieldNavDropdownListItem ({ field, selectedField, handleClick }) {
 
 function FieldNavDropdownList ({ selectedField, allOtherFields, handleClick }) {
   return (
-    <ul className='field-menu-dropdown'>
+    <ul className='field-nav-dropdown'>
       {allOtherFields.map((field) => (
         <FieldNavDropdownListItem
           field={field.name}
