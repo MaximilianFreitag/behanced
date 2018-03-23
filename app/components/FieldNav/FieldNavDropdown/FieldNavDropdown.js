@@ -32,10 +32,12 @@ class FieldNavDropdown extends Component {
     super(props)
 
     this.state = {
-      allOtherFields: null
+      allOtherFields: null,
+      otherFieldIsSelected: false
     }
 
     this.handleClick = this.handleClick.bind(this)
+    this.updateNavDropdownText = this.updateNavDropdownText.bind(this)
   }
 
   componentWillReceiveProps (nextProps) {
@@ -46,9 +48,25 @@ class FieldNavDropdown extends Component {
     }
   }
 
+  updateNavDropdownText () {
+    if (this.state.allOtherFields) {
+      console.log('updateNavDropdownText called!')
+      console.log('this.props.selectedField:', this.props.selectedField)
+      const allOtherFieldNames = this.state.allOtherFields.map((field) => field.name)
+
+      if (allOtherFieldNames.includes(this.props.selectedField)) {
+        console.log('otherFieldIsSelected!')
+        this.setState(() => ({
+          otherFieldIsSelected: true
+        }))
+      }
+    }
+  }
+
   handleClick (field) {
     this.props.onSelect(field)
     this.refs.dropdown.hide()
+    this.updateNavDropdownText()
   }
 
   render () {
@@ -57,13 +75,19 @@ class FieldNavDropdown extends Component {
     return (
       <Dropdown ref='dropdown'>
         <DropdownTrigger>
-          <span>More</span>
+          <span style={this.state.otherFieldIsSelected ? { color: '#c1ac6a' } : null}>
+            {
+              this.state.otherFieldIsSelected
+              ? selectedField
+              : 'More'
+            }
+          </span>
           <svg class='more-arrow' height='10' width='10' viewBox='0 0 24 24'><path d='M12.00,19.50 L0.66,8.29 C-0.22,7.43 -0.22,6.02 0.66,5.15 C1.54,4.28 2.96,4.28 3.84,5.15 L12.00,13.21 L20.16,5.15 C21.04,4.28 22.46,4.28 23.34,5.15 C24.22,6.02 24.22,7.43 23.34,8.29 L12.00,19.50 Z'></path></svg>
         </DropdownTrigger>
         <DropdownContent>
           {
             !this.state.allOtherFields
-            ? <li>Loading...</li>
+            ? <p>Loading...</p>
             : <FieldNavDropdownList
                 selectedField={selectedField}
                 allOtherFields={this.state.allOtherFields}

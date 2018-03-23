@@ -29,8 +29,7 @@ class Main extends Component {
         'Graphic Design',
         'Illustration',
         'Photography',
-        'UI/UX',
-        'Web Design'
+        'Web Development'
       ],
       allFields: null,
       allOtherFields: null,
