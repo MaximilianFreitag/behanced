@@ -1,0 +1,145 @@
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 380px;
+  background: $footer--background;
+  color: $footer--color;
+  padding: 70px 0;
+  text-align: center;
+  z-index: 0;
+}
+
+.footer__behanced-logo {
+  margin-bottom: 50px;
+
+  .text {
+    fill: $footer--color;
+  }
+
+  .plus {
+    fill: $logo--fill--plus;
+  }
+}
+
+.footer__adobe-behance {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+
+  .adobe-logo {
+    fill: $adobe-red;
+  }
+
+  .text {
+    fill: $footer--color;
+  }
+}
+
+.footer__adobe-logo {
+  position: relative;
+  margin-right: 20px;
+  transition: opacity 0.3s ease;
+
+  &:hover {
+    opacity: 0.6;
+  }
+
+  svg {
+    position: relative;
+    top: 2px;
+  }
+}
+
+.footer__adobe-behance__divider {
+  height: 40px;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.25);
+  position: relative;
+  left: 0;
+}
+
+.footer__powered-by-behance {
+  display: flex;
+  align-items: center;
+  transition: opacity 0.3s ease;
+  margin-left: 20px;
+
+  &:hover {
+    opacity: 0.6;
+  }
+}
+
+.footer__web-tech p {
+  font-size: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.footer__web-tech-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 520px;
+  height: 100px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+
+  li {
+    transition: opacity 0.3s ease;
+  }
+
+  li:hover {
+    opacity: 0.6;
+  }
+
+  .firebase-logo-text {
+    fill: $footer--color;
+  }
+}
+
+.footer__github-link {
+  font-size: 11px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 1px;
+  border-radius: 300px;
+  padding: 15px 30px;
+  background-color: $footer--background;
+  color: $footer--color;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: $gold;
+    border: none;
+  }
+
+  .fa-github {
+    color: $white;
+    margin-right: 8px;
+    height: 1.75em;
+    width: auto;
+    vertical-align: -0.5em;
+  }
+}
+
+.footer__attribution {
+  font-size: 11px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-top: 50px;
+
+  a {
+    text-decoration: none;
+    color: $gold;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+}

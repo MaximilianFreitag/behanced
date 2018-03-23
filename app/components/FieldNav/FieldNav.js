@@ -8,7 +8,7 @@ export default function FieldNav (props) {
   const { selectedField, popularFields, allOtherFields, onSelect } = props
 
   return (
-    <ul className='field-menu'>
+    <ul className='field-nav'>
       {popularFields.map((field) => (
         <FieldNavItem
           field={field}

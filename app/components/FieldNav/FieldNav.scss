@@ -1,0 +1,33 @@
+.field-nav {
+  display: flex;
+  justify-content: center;
+  background: $field-nav--background;
+  margin: 0;
+  padding: 1.5em;
+
+  li {
+    cursor: pointer;
+    color: $field-nav--color;
+    margin: 15px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: $field-nav--color--hover;
+
+      .more-arrow {
+        fill: $field-nav--color--hover;
+      }
+    }
+  }
+
+  .more-arrow {
+    position: relative;
+    top: 1px;
+    margin-left: 5px;
+    fill: $field-nav--color;
+    transition: fill 0.3s ease;
+  }
+}
