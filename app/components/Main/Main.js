@@ -21,19 +21,7 @@ class Main extends Component {
 
     this.state = {
       selectedField: '',
-      popularFields: [
-        'Architecture',
-        'Art Direction',
-        'Branding',
-        'Fashion',
-        'Graphic Design',
-        'Illustration',
-        'Photography',
-        'UI/UX',
-        'Web Design'
-      ],
       allFields: null,
-      allOtherFields: null,
       projects: null
     }
 
@@ -44,14 +32,7 @@ class Main extends Component {
     this.updateField(this.state.selectedField)
 
     fetchAllFields()
-      .then((fields) => {
-        const allOtherFields = fields.filter((field) => !this.state.popularFields.includes(field.name))
-
-        this.setState(() => ({
-          allFields: fields,
-          allOtherFields: allOtherFields
-        }))
-      })
+      .then((allFields) => this.setState(() => ({ allFields })))
   }
 
   updateField (field) {
@@ -65,7 +46,7 @@ class Main extends Component {
   }
 
   render () {
-    const { selectedField, popularFields, allFields, allOtherFields, projects } = this.state
+    const { selectedField, allFields, projects } = this.state
 
     return (
       <div className='main'>
@@ -76,8 +57,6 @@ class Main extends Component {
         </div>
         <FieldNav
           selectedField={selectedField}
-          popularFields={popularFields}
-          allOtherFields={allOtherFields}
           onSelect={this.updateField} />
         {
           !projects
