@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import Dropdown, { DropdownTrigger, DropdownContent } from './Dropdown'
 
-function FieldMenuDropdownListItem ({ field, selectedField, handleClick }) {
+function FieldNavDropdownListItem ({ field, selectedField, handleClick }) {
   return (
     <li
       style={field === selectedField ? { color: '#c1ac6a' } : null}
@@ -13,11 +13,11 @@ function FieldMenuDropdownListItem ({ field, selectedField, handleClick }) {
   )
 }
 
-function FieldMenuDropdownList ({ selectedField, allOtherFields, handleClick }) {
+function FieldNavDropdownList ({ selectedField, allOtherFields, handleClick }) {
   return (
     <ul className='field-menu-dropdown'>
       {allOtherFields.map((field) => (
-        <FieldMenuDropdownListItem
+        <FieldNavDropdownListItem
           field={field.name}
           selectedField={selectedField}
           handleClick={handleClick}
@@ -27,7 +27,7 @@ function FieldMenuDropdownList ({ selectedField, allOtherFields, handleClick }) 
   )
 }
 
-class FieldMenuDropdown extends Component {
+class FieldNavDropdown extends Component {
   constructor (props) {
     super(props)
 
@@ -64,7 +64,7 @@ class FieldMenuDropdown extends Component {
           {
             !this.state.allOtherFields
             ? <li>Loading...</li>
-            : <FieldMenuDropdownList
+            : <FieldNavDropdownList
                 selectedField={selectedField}
                 allOtherFields={this.state.allOtherFields}
                 handleClick={this.handleClick}
@@ -79,10 +79,10 @@ class FieldMenuDropdown extends Component {
   }
 }
 
-FieldMenuDropdown.propTypes = {
+FieldNavDropdown.propTypes = {
   selectedField: PropTypes.string.isRequired,
   allOtherFields: PropTypes.array.isRequired,
   onSelect: PropTypes.func.isRequired
 }
 
-export default FieldMenuDropdown
+export default FieldNavDropdown

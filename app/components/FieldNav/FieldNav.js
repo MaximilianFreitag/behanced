@@ -1,23 +1,23 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
-import FieldMenuItem from './FieldMenuItem'
-import FieldMenuDropdown from './FieldMenuDropdown/FieldMenuDropdown'
+import FieldNavItem from './FieldNavItem'
+import FieldNavDropdown from './FieldNavDropdown/FieldNavDropdown'
 
-export default function FieldMenu (props) {
+export default function FieldNav (props) {
   const { selectedField, popularFields, allOtherFields, onSelect } = props
 
   return (
     <ul className='field-menu'>
       {popularFields.map((field) => (
-        <FieldMenuItem
+        <FieldNavItem
           field={field}
           selectedField={selectedField}
           onSelect={onSelect}
         />
       ))}
       <li>
-        <FieldMenuDropdown
+        <FieldNavDropdown
           selectedField={selectedField}
           allOtherFields={allOtherFields}
           onSelect={onSelect}
@@ -27,7 +27,7 @@ export default function FieldMenu (props) {
   )
 }
 
-FieldMenu.propTypes = {
+FieldNav.propTypes = {
   selectedField: PropTypes.string.isRequired,
   popularFields: PropTypes.array.isRequired,
   allOtherFields: PropTypes.array.isRequired,

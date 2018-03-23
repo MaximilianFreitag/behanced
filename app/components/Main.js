@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { fetchProjects, fetchAllFields } from '../utils/api'
 
 import Logo from '../assets/logos/behanced-logo.svg'
-import FieldMenu from './FieldMenu/FieldMenu'
+import FieldNav from './FieldNav/FieldNav'
 import ProjectGrid from './ProjectGrid/ProjectGrid'
 
 function Loading () {
@@ -74,7 +74,7 @@ class Main extends Component {
             <Logo width={250} />
           </a>
         </div>
-        <FieldMenu
+        <FieldNav
           selectedField={selectedField}
           popularFields={popularFields}
           allOtherFields={allOtherFields}
