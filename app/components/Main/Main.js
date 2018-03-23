@@ -45,7 +45,7 @@ class Main extends Component {
 
     fetchAllFields()
       .then((fields) => {
-        const allOtherFields = fields.filter((field) => this.state.popularFields.indexOf(field.name) === -1)
+        const allOtherFields = fields.filter((field) => !this.state.popularFields.includes(field.name))
 
         this.setState(() => ({
           allFields: fields,
