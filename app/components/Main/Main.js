@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-import { fetchProjects, fetchAllFields } from '../utils/api'
+import { fetchProjects, fetchAllFields } from '../../utils/api'
 
-import Logo from '../assets/logos/behanced-logo.svg'
-import FieldNav from './FieldNav/FieldNav'
-import ProjectGrid from './ProjectGrid/ProjectGrid'
+import Logo from '../../assets/logos/behanced-logo.svg'
+import FieldNav from '../FieldNav/FieldNav'
+import ProjectGrid from '../ProjectGrid/ProjectGrid'
 
 function Loading () {
   return (
