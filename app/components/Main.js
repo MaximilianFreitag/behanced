@@ -4,7 +4,7 @@ import { fetchProjects, fetchAllFields } from '../utils/api'
 import Logo from '../assets/logos/behanced-logo.svg'
 import FieldMenu from './FieldMenu/FieldMenu'
 import Loading from './Loading'
-import ProjectGrid from './ProjectGrid'
+import ProjectGrid from './ProjectGrid/ProjectGrid'
 
 class Main extends Component {
   constructor (props) {
