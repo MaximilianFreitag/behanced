@@ -1,10 +1,19 @@
 import React, { Component } from 'react'
-import { fetchProjects, fetchAllFields } from '../utils/api'
+import { fetchProjects, fetchAllFields } from '../../utils/api'
 
-import Logo from '../assets/logos/behanced-logo.svg'
-import FieldMenu from './FieldMenu'
-import Loading from './Loading'
-import ProjectGrid from './ProjectGrid'
+import Logo from '../../assets/logos/behanced-logo.svg'
+import FieldNav from '../FieldNav/FieldNav'
+import ProjectGrid from '../ProjectGrid/ProjectGrid'
+
+function Loading () {
+  return (
+    <div className='spinner'>
+      <div className='bounce1 bounce'></div>
+      <div className='bounce2 bounce'></div>
+      <div className='bounce3 bounce'></div>
+    </div>
+  )
+}
 
 class Main extends Component {
   constructor (props) {
@@ -65,7 +74,7 @@ class Main extends Component {
             <Logo width={250} />
           </a>
         </div>
-        <FieldMenu
+        <FieldNav
           selectedField={selectedField}
           popularFields={popularFields}
           allOtherFields={allOtherFields}

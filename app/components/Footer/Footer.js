@@ -1,16 +1,14 @@
 import React from 'react'
 
-// Logos
-import LogoMini from '../assets/logos/behanced-logo-mini.svg'
-import AdobeLogo from '../assets/logos/adobe-logo.svg'
-import PoweredByBehanceLogo from '../assets/logos/powered-by-behance.svg'
-import ReactLogo from '../assets/logos/react-logo.svg'
-import BabelLogo from '../assets/logos/babel-logo.svg'
-import WebpackLogo from '../assets/logos/webpack-logo.svg'
-import SassLogo from '../assets/logos/sass-logo.svg'
-import FirebaseLogo from '../assets/logos/firebase-logo.svg'
-
-// GitHub Logo
+// Logos & Icons
+import LogoMini from '../../assets/logos/behanced-logo-mini.svg'
+import AdobeLogo from '../../assets/logos/adobe-logo.svg'
+import PoweredByBehanceLogo from '../../assets/logos/powered-by-behance.svg'
+import ReactLogo from '../../assets/logos/react-logo.svg'
+import BabelLogo from '../../assets/logos/babel-logo.svg'
+import WebpackLogo from '../../assets/logos/webpack-logo.svg'
+import SassLogo from '../../assets/logos/sass-logo.svg'
+import FirebaseLogo from '../../assets/logos/firebase-logo.svg'
 import FontAwesomeIcon from '@fortawesome/react-fontawesome'
 import faGitHub from '@fortawesome/fontawesome-free-brands/faGithub'
 
