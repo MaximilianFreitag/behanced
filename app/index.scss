@@ -139,12 +139,26 @@ li {
   position: absolute;
   right: 70px;
   top: -20px;
-  width: 300px;
+  width: 650px;
   background-color: $white;
   border: 1px solid $field-menu__dropdown-border;
   border-radius: 5px;
   box-shadow: 0 5px 12px rgba(0,0,0,0.15);
+  padding: 15px;
   z-index: $z-dropdown;
+}
+
+.field-menu-dropdown {
+  columns: 3;
+  -webkit-columns: 3;
+  -moz-columns: 3;
+
+  li {
+    display: inline-block;
+    width: 85%;
+    font-size: 11px;
+    margin: 7px 10px;
+  }
 }
 
 .dropdown__triangle {
