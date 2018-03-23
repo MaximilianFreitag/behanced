@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import Dropdown, { DropdownTrigger, DropdownContent } from './Dropdown/Dropdown'
+import Dropdown, { DropdownTrigger, DropdownContent } from './Dropdown'
 
 function FieldMenuDropdownListItem ({ field, selectedField, handleClick }) {
   return (

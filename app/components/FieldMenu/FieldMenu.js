@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
 import FieldMenuItem from './FieldMenuItem'
-import FieldMenuDropdown from './FieldMenuDropdown'
+import FieldMenuDropdown from './FieldMenuDropdown/FieldMenuDropdown'
 
 export default function FieldMenu (props) {
   const { selectedField, popularFields, allOtherFields, onSelect } = props

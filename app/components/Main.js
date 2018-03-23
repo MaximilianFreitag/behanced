@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { fetchProjects, fetchAllFields } from '../utils/api'
 
 import Logo from '../assets/logos/behanced-logo.svg'
-import FieldMenu from './FieldMenu'
+import FieldMenu from './FieldMenu/FieldMenu'
 import Loading from './Loading'
 import ProjectGrid from './ProjectGrid'
 
