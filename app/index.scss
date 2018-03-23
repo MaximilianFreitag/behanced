@@ -139,7 +139,7 @@ li {
   position: absolute;
   right: 70px;
   top: -20px;
-  width: 650px;
+  width: auto;
   background-color: $white;
   border: 1px solid $field-menu__dropdown-border;
   border-radius: 5px;
@@ -149,15 +149,15 @@ li {
 }
 
 .field-menu-dropdown {
-  columns: 3;
-  -webkit-columns: 3;
-  -moz-columns: 3;
+  columns: 4;
+  -webkit-columns: 4;
+  -moz-columns: 4;
 
   li {
     display: inline-block;
-    width: 85%;
-    font-size: 11px;
-    margin: 7px 10px;
+    width: 100%;
+    font-size: 12px;
+    margin: 10px 30px 10px 15px;
   }
 }
 
