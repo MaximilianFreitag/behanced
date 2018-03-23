@@ -3,8 +3,17 @@ import { fetchProjects, fetchAllFields } from '../utils/api'
 
 import Logo from '../assets/logos/behanced-logo.svg'
 import FieldMenu from './FieldMenu/FieldMenu'
-import Loading from './Loading'
 import ProjectGrid from './ProjectGrid/ProjectGrid'
+
+function Loading () {
+  return (
+    <div className='spinner'>
+      <div className='bounce1 bounce'></div>
+      <div className='bounce2 bounce'></div>
+      <div className='bounce3 bounce'></div>
+    </div>
+  )
+}
 
 class Main extends Component {
   constructor (props) {
