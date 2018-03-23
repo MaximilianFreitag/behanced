@@ -13,7 +13,8 @@
     "presets": [
       "env",
       "react"
-    ]
+    ],
+    "plugins": [ "transform-object-rest-spread" ]
   },
   "repository": {
     "type": "git",
@@ -31,6 +32,7 @@
     "@fortawesome/fontawesome-free-solid": "^5.0.8",
     "@fortawesome/react-fontawesome": "0.0.17",
     "axios": "^0.18.0",
+    "classnames": "^2.2.5",
     "dotenv": "^5.0.1",
     "numeral": "^2.0.6",
     "prop-types": "^15.6.1",
@@ -40,6 +42,7 @@
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.4",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "css-loader": "^0.28.10",

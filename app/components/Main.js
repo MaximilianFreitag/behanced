@@ -12,8 +12,20 @@ class Main extends Component {
 
     this.state = {
       selectedField: '',
-      projects: null,
-      allFields: null
+      popularFields: [
+        'Architecture',
+        'Art Direction',
+        'Branding',
+        'Fashion',
+        'Graphic Design',
+        'Illustration',
+        'Photography',
+        'UI/UX',
+        'Web Design'
+      ],
+      allFields: null,
+      allOtherFields: null,
+      projects: null
     }
 
     this.updateField = this.updateField.bind(this)
@@ -23,7 +35,14 @@ class Main extends Component {
     this.updateField(this.state.selectedField)
 
     fetchAllFields()
-      .then((fields) => this.setState(() => ({ allFields: fields })))
+      .then((fields) => {
+        const allOtherFields = fields.filter((field) => this.state.popularFields.indexOf(field.name) === -1)
+
+        this.setState(() => ({
+          allFields: fields,
+          allOtherFields: allOtherFields
+        }))
+      })
   }
 
   updateField (field) {
@@ -37,7 +56,7 @@ class Main extends Component {
   }
 
   render () {
-    const { selectedField, projects, allFields } = this.state
+    const { selectedField, popularFields, allFields, allOtherFields, projects } = this.state
 
     return (
       <div className='main'>
@@ -48,6 +67,8 @@ class Main extends Component {
         </div>
         <FieldMenu
           selectedField={selectedField}
+          popularFields={popularFields}
+          allOtherFields={allOtherFields}
           onSelect={this.updateField} />
         {
           !projects
