@@ -4,10 +4,15 @@
   -moz-columns: 4;
 
   li {
+    color: $field-nav--color;
     display: inline-block;
     width: 100%;
     font-size: 12px;
     margin: 10px 30px 10px 15px;
+
+    &:hover {
+      color: $field-nav--color--active;
+    }
   }
 }
 
@@ -22,7 +27,7 @@
   right: 70px;
   top: -20px;
   width: auto;
-  background-color: $white;
+  background-color: $field-nav--background;
   border: 1px solid $field-nav__dropdown-border;
   border-radius: 5px;
   box-shadow: 0 5px 12px rgba(0,0,0,0.15);
@@ -36,7 +41,7 @@
   top: 15px;
 
   svg {
-    fill: $white;
+    fill: $field-nav--background;
     stroke: $field-nav__dropdown-border;
   }
 }
