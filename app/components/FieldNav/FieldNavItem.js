@@ -4,7 +4,8 @@ import PropTypes from 'prop-types'
 export default function FieldNavItem ({ field, selectedField, onSelect }) {
   return (
     <li
-      style={field === selectedField ? { color: '#c1ac6a' } : null}
+      className='field-nav-item'
+      style={field === selectedField ? { color: '#2b2b2b' } : null}
       onClick={() => onSelect(field)}
       key={field}>
       {field}
