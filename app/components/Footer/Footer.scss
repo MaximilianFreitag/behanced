@@ -108,7 +108,7 @@
   text-decoration: none;
   letter-spacing: 1px;
   border-radius: 300px;
-  padding: 15px 30px;
+  padding: 16px 22px;
   background-color: $footer--background;
   color: $footer--color;
   border: 1px solid rgba(255, 255, 255, 0.5);
@@ -121,8 +121,8 @@
 
   .fa-github {
     color: $white;
-    margin-right: 8px;
-    height: 1.75em;
+    margin: 0 7px 0 3px;
+    height: 1.8em;
     width: auto;
     vertical-align: -0.5em;
   }
